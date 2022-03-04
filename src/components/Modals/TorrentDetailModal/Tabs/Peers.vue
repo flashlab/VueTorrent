@@ -56,23 +56,25 @@ export default {
   name: 'Peers',
   mixins: [FullScreenModal],
   props: { hash: String, isActive: Boolean },
-  data: () => ({
-    refreshTimer: '',
-    headers: [
-      { text: 'IP', value: 'ip' },
-      { text: 'Connection', value: 'connection' },
-      { text: 'Flags', value: 'flags' },
-      { text: 'Client', value: 'client' },
-      { text: 'Progress', value: 'progress' },
-      { text: 'DL Speed', value: 'dl_speed' },
-      { text: 'Downloaded', value: 'downloaded' },
-      { text: 'UP Speed', value: 'up_speed' },
-      { text: 'Uploaded', value: 'uploaded' },
-      { text: 'Relevance', value: 'relevance' },
-      { text: 'Files', value: 'files' }
-    ],
-    peersObj: null
-  }),
+  data() {
+    return {
+      refreshTimer: '',
+      headers: [
+        { text: 'IP', value: 'ip' },
+        { text: this.$t('modals.settings.connection'), value: 'connection' },
+        { text: this.$t('torrent.flags'), value: 'flags' },
+        { text: this.$t('torrent.client'), value: 'client' },
+        { text: this.$t('torrent.progress'), value: 'progress' },
+        { text: this.$t('torrent.dlspeed'), value: 'dl_speed' },
+        { text: this.$t('torrent.downloaded'), value: 'downloaded' },
+        { text: this.$t('torrent.upspeed'), value: 'up_speed' },
+        { text: this.$t('torrent.uploaded'), value: 'uploaded' },
+        { text: this.$t('torrent.relevance'), value: 'relevance' },
+        { text: this.$t('torrent.files'), value: 'files' }
+      ],
+      peersObj: null
+    }
+  },
   computed: {
     rid: {
       get() {

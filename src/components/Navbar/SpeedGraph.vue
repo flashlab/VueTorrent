@@ -60,7 +60,7 @@ export default {
             formatter: value => {
               const val = 32 - value * 2
               
-              return val + ' seconds ago'
+              return val + this.$t('navbar.secago')
             }
           },
           y: {
@@ -76,12 +76,12 @@ export default {
     series() {
       return [
         {
-          name: 'upload',
+          name: this.$t('torrent.upload'),
           type: 'area',
           data: this.$store.state.upload_data
         },
         {
-          name: 'download',
+          name: this.$t('torrent.download'),
           type: 'area',
           data: this.$store.state.download_data
         }

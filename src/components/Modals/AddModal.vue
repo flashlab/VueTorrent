@@ -103,7 +103,7 @@
                 v-model="category"
                 :items="availableCategories"
                 clearable
-                label="Category"
+                :label="$t('category')"
                 item-text="name"
                 :prepend-icon="mdiTag"
                 @input="categoryChanged"
@@ -112,7 +112,7 @@
               <v-text-field
                 v-model="directory"
                 :disabled="autoTMM"
-                label="Download Directory"
+                :label="$t('torrent.downloadpath')"
                 :prepend-icon="mdiFolder"
                 autocomplete="download-directory"
                 name="download-directory"
@@ -121,28 +121,28 @@
                 <v-flex xs12 sm6>
                   <v-checkbox
                     v-model="start"
-                    label="Start torrent"
+                    :label="$t('torrent.startorrent')"
                     hide-details
                   />
                 </v-flex>
                 <v-flex xs12 sm6>
                   <v-checkbox
                     v-model="skip_checking"
-                    label="Skip hash check"
+                    :label="$t('torrent.skiphashcheck')"
                     hide-details
                   />
                 </v-flex>
                 <v-flex xs12 sm6>
                   <v-checkbox
                     v-model="root_folder"
-                    label="Create subfolder"
+                    :label="$t('torrent.createsubfolder')"
                     hide-details
                   />
                 </v-flex>
                 <v-flex xs12 sm6>
                   <v-checkbox
                     v-model="autoTMM"
-                    label="Automatic Torrent Management"
+                    :label="$t('modals.settings.automanage')"
                     hide-details
                   />
                 </v-flex>
@@ -160,7 +160,7 @@
               class="accent white--text mx-0 mt-3"
               @click="submit"
             >
-              Add Torrent
+              {{ $t('navbar.topActions.addTorrent') }}
             </v-btn>
             <v-fab-transition v-if="phoneLayout">
               <v-btn
@@ -198,7 +198,7 @@
           </v-icon>
         </div>
         <div>
-          <h3>Drop here for add</h3>
+          <h3>{{ $t('torrent.drophereadd') }}</h3>
         </div>
       </div>
     </div>
@@ -234,7 +234,7 @@ export default {
             else return /^.*\.torrent$/.test(f.name)
           })
           
-          return result ? result : 'One or more files is not a valid torrent'
+          return result ? result : this.$t('torrent.invalidtorrent')
         }
       ],
       loading: false,

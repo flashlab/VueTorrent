@@ -8,7 +8,7 @@
   >
     <v-card :style="{ height: phoneLayout ? '100vh' : '' }">
       <v-card-title class="justify-center">
-        <h2>Search</h2>
+        <h2>{{ $t('search') }}</h2>
       </v-card-title>
       <v-card-text class="pa-0">
         <v-form
@@ -20,7 +20,7 @@
               <v-text-field
                 v-model="searchForm.pattern"
                 :prepend-inner-icon="mdiMagnify"
-                label="Search"
+                :label="$t('search')"
                 :rules="[v => !!v || 'Searchterm is required']"
                 clearable
                 style="width: 95%;"
@@ -106,12 +106,12 @@ export default {
       loading: false,
       grid: {
         headers: [
-          { text: 'Name', value: 'fileName' },
-          { text: 'Size', value: 'fileSize' },
-          { text: 'Seeds', value: 'nbSeeders' },
-          { text: 'Peers', value: 'nbLeechers' },
-          { text: 'Search_engine', value: 'siteUrl' },
-          { text: 'Action', value: 'actions', sortable: false }
+          { text: this.$t('modals.search.name'), value: 'fileName' },
+          { text: this.$t('modals.search.size'), value: 'fileSize' },
+          { text: this.$t('seeds'), value: 'nbSeeders' },
+          { text: this.$t('modals.search.peers'), value: 'nbLeechers' },
+          { text: this.$t('modals.search.engine'), value: 'siteUrl' },
+          { text: this.$t('modals.search.action'), value: 'actions', sortable: false }
         ]
       },
       searchForm: {

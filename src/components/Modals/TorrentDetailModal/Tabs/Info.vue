@@ -4,7 +4,7 @@
       <tbody>
         <tr>
           <td :class="commonStyle">
-            Torrent title
+            {{ $t('torrent.title') }}
           </td>
           <td>
             {{ torrent.name }}
@@ -55,7 +55,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Ratio
+            {{ $t('torrent.ratio') }}
           </td>
           <td>
             {{ torrent.ratio }}
@@ -63,7 +63,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            DL Speed
+            {{ $t('torrent.dlspeed') }}
           </td>
           <td>
             {{ torrent.dlspeed | getDataValue }}
@@ -72,7 +72,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            UP Speed
+            {{ $t('torrent.upspeed') }}
           </td>
           <td>
             {{ torrent.upspeed | getDataValue }}
@@ -81,7 +81,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            ETA
+            {{ $t('torrent.eta') }}
           </td>
           <td>
             {{ torrent.eta }}
@@ -98,7 +98,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Seeds
+            {{ $t('seeds') }}
           </td>
           <td>
             {{ torrent.num_seeds
@@ -115,7 +115,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Status
+            {{ $t('torrent.status') }}
           </td>
           <td>
             <v-chip
@@ -136,7 +136,7 @@
         </tr>
         <tr v-if="createdBy">
           <td :class="commonStyle">
-            Created By
+            {{ $t('torrent.created') }}
           </td>
           <td>
             {{ createdBy }}
@@ -153,7 +153,7 @@
 
         <tr>
           <td :class="commonStyle">
-            First/Last Piece Priority
+            {{ $t('torrent.pieceprior') }}
           </td>
           <td>
             {{ torrent.f_l_piece_prio }}
@@ -161,7 +161,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Sequential Download
+            {{ $t('torrent.sequential') }}
           </td>
           <td>
             {{ torrent.seq_dl }}
@@ -169,7 +169,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Auto TMM
+            {{ $t('torrent.autotmm') }}
           </td>
           <td>
             {{ torrent.auto_tmm }}
@@ -177,7 +177,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Share Ratio Limit
+            {{ $t('torrent.shareratiolimit') }}
           </td>
           <td>
             {{ torrent.ratio_limit | limitToValue }}
@@ -185,7 +185,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Share Time Limit (minutes)
+            {{ $t('torrent.sharetimelimit') }}
           </td>
           <td>
             {{ torrent.ratio_time_limit | limitToValue }}
@@ -193,7 +193,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Download Limit
+            {{ $t('torrent.downloadlimit') }}
           </td>
           <td v-if="torrent.dl_limit > 0">
             {{ torrent.dl_limit | getDataValue }} {{ torrent.dl_limit | getDataUnit }}<span>/s </span>
@@ -204,7 +204,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            Upload Limit
+            {{ $t('torrent.uploadlimit') }}
           </td>
           <td v-if="torrent.up_limit > 0">
             {{ torrent.up_limit | getDataValue }} {{ torrent.up_limit | getDataUnit }}<span>/s </span>

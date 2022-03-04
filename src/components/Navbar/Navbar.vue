@@ -113,7 +113,7 @@ export default {
       return this.getStatus()
     },
     torrentCountString() {
-      return this.getTorrentCountString()
+      return this.getTorrentCountString() + this.$t('panel.torrents')
     }
   },
   created() {

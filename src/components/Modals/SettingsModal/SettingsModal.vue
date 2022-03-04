@@ -20,22 +20,22 @@
             <v-tabs v-model="tab" align-with-title show-arrows>
               <v-tabs-slider color="white" />
               <v-tab class="white--text" href="#vuetorrent">
-                <h4>vuetorrent</h4>
+                <h4>{{ $t('modals.settings.vuetorrent') }}</h4>
               </v-tab>
               <v-tab class="white--text" href="#downloads">
-                <h4>downloads</h4>
+                <h4>{{ $t('modals.settings.downloads') }}</h4>
               </v-tab>
               <v-tab class="white--text" href="#connection">
-                <h4>connection</h4>
+                <h4>{{ $t('modals.settings.connection') }}</h4>
               </v-tab>
               <v-tab class="white--text" href="#bittorrent">
-                <h4>bittorrent</h4>
+                <h4>{{ $t('modals.settings.bittorrent') }}</h4>
               </v-tab>
               <v-tab class="white--text" href="#webui">
-                <h4>WEB UI</h4>
+                <h4>{{ $t('modals.settings.webui') }}</h4>
               </v-tab>
               <v-tab class="white--text" href="#tagsAndCategories">
-                <h4>tags & categories</h4>
+                <h4>{{ $t('modals.settings.tagcat') }}</h4>
               </v-tab>
             </v-tabs>
           </template>

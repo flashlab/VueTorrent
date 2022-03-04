@@ -6,7 +6,7 @@
   >
     <v-flex xs12>
       <div class="caption grey--text">
-        Torrent title
+        {{ $t('torrent.torrentitle') }}
       </div>
       <div class="truncate mr-4">
         {{ torrent.name }}

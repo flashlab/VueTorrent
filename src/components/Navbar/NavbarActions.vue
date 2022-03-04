@@ -15,7 +15,7 @@
             </v-icon>
           </v-btn>
         </template>
-        <span>Log Out</span>
+        <span>{{ $t('navbar.logout') }}</span>
       </v-tooltip>
     </v-col>
     <v-col>
@@ -33,11 +33,11 @@
             </v-icon>
           </v-btn>
         </template>
-        <span>Alt speeds</span>
+        <span>{{ $t('navbar.altspeeds') }}</span>
       </v-tooltip>
     </v-col>
     <v-col>
-      <connection-status :status="connectionStatus | titleCase" />
+      <connection-status :status="connectionStatus" />
     </v-col>
     <v-col>
       <v-tooltip top>
@@ -54,7 +54,7 @@
             </v-icon>
           </v-btn>
         </template>
-        <span>{{ theme }}</span>
+        <span>{{ $t(`navbar.${theme.toLowerCase()}`) }}</span>
       </v-tooltip>
     </v-col>
   </v-row>

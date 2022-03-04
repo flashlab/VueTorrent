@@ -1,6 +1,6 @@
 <template>
   <v-card flat>
-    <v-subheader>Connection Limits</v-subheader>
+    <v-subheader>{{ $t('modals.settings.connectionlimits') }}</v-subheader>
     <v-list-item>
       <v-text-field
         v-model="settings.max_connec"
@@ -9,7 +9,7 @@
         dense
         type="number"
         hide-details
-        label="Global maximum number of connections"
+        :label="$t('modals.settings.globalmaxconnection')"
       />
     </v-list-item>
     <v-list-item>
@@ -20,7 +20,7 @@
         dense
         type="number"
         hide-details
-        label="Maximum number of connections per torrent"
+        :label="$t('modals.settings.maxconnectioneach')"
       />
     </v-list-item>
     <v-list-item>
@@ -31,7 +31,7 @@
         dense
         type="number"
         hide-details
-        label="Global maximum number of upload slots"
+        :label="$t('modals.settings.globalmaxupload')"
       />
     </v-list-item>
     <v-list-item>
@@ -42,7 +42,7 @@
         dense
         type="number"
         hide-details
-        label="Maximum number of upload slots per torrent"
+        :label="$t('modals.settings.maxuploadeach')"
       />
     </v-list-item>
   </v-card>

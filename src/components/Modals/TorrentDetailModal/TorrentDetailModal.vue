@@ -13,7 +13,7 @@
       <v-card-title class="primary pa-0" @dblclick="hndlFullscreen = !hndlFullscreen">
         <v-toolbar flat dense class="primary white--text">
           <v-toolbar-title class="mt-auto">
-            <h3>Torrent Detail</h3>
+            <h3>{{ $t('torrent.torrentdetail') }}</h3>
           </v-toolbar-title>
           <v-spacer />
           <v-btn
@@ -37,7 +37,7 @@
             <v-tabs v-model="tab" align-with-title show-arrows>
               <v-tabs-slider color="white" />
               <v-tab class="white--text" href="#info">
-                <h4>Info</h4>
+                <h4>{{ $t('torrent.info') }}</h4>
               </v-tab>
               <v-tab class="white--text" href="#trackers">
                 <h4>Trackers</h4>
@@ -46,10 +46,10 @@
                 <h4>Peers</h4>
               </v-tab>
               <v-tab class="white--text" href="#content">
-                <h4>Content</h4>
+                <h4>{{ $t('torrent.content') }}</h4>
               </v-tab>
               <v-tab class="white--text" href="#tagsAndCategories">
-                <h4>Tags & Categories</h4>
+                <h4>{{ $t('modals.settings.tagcat') }}</h4>
               </v-tab>
             </v-tabs>
           </template>

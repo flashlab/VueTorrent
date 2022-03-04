@@ -2,10 +2,10 @@
   <v-card flat>
     <v-tabs v-model="tab">
       <v-tab href="#general">
-        General
+        {{ $t('modals.settings.general') }}
       </v-tab>
       <v-tab href="#dashboard">
-        Dashboard
+        {{ $t('modals.settings.dashboard') }}
       </v-tab>
     </v-tabs>
     <v-tabs-items v-model="tab" touchless>

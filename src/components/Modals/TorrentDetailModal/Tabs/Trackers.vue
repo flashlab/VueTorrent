@@ -27,7 +27,7 @@
               </td>
               <td>{{ item.tier }}</td>
               <td>{{ item.url }}</td>
-              <td>{{ item.status | formatTrackerStatus }}</td>
+              <td>{{ formatTrackerStatus(item.status) }}</td>
               <td>{{ item.num_peers | formatTrackerNum }}</td>
               <td>{{ item.num_seeds | formatTrackerNum }}</td>
               <td>{{ item.num_leeches | formatTrackerNum }}</td>
@@ -43,7 +43,7 @@
         class="error white--text elevation-0 px-4 mx-2"
         @click="DeleteTrackers"
       >
-        Delete
+        {{ $t('delete') }}
       </v-btn>
       <v-dialog
         v-model="trackerDialog"
@@ -57,12 +57,12 @@
             v-bind="attrs"
             v-on="on"
           >
-            Add
+            {{ $t('add') }}
           </v-btn>
         </template>
         <v-card>
           <v-card-title class="justify-center">
-            <h3>Add Trackers</h3>
+            <h3>{{ $t('add') }} Trackers</h3>
           </v-card-title>
           <v-card-text>
             <v-textarea
@@ -79,10 +79,10 @@
           <v-card-actions>
             <v-spacer />
             <v-btn color="red darken-1" text @click="closeAddTrackers">
-              Cancel
+              {{ $t('cancel') }}
             </v-btn>
             <v-btn color="green darken-1" text @click="addTrackers">
-              Add
+              {{ $t('add') }}
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -97,17 +97,6 @@ import { FullScreenModal } from '@/mixins'
 export default {
   name: 'Trackers',
   filters: {
-    formatTrackerStatus(status) {
-      const map = [
-        'Disabled',
-        'Not contacted',
-        'Working',
-        'Updating',
-        'Not working'
-      ]
-
-      return map[status]
-    },
     formatTrackerNum(num) {
       if (num === -1) {
         return 'N/A'
@@ -118,22 +107,31 @@ export default {
   },
   mixins: [FullScreenModal],
   props: { hash: String, isActive: Boolean },
-  data: () => ({
-    trackerDialog: false,
-    headers: [
-      { text: '#', value: 'tier' },
-      { text: 'URL', value: 'url' },
-      { text: 'Status', value: 'status' },
-      { text: 'Peers', value: 'num_peers' },
-      { text: 'Seeds', value: 'num_seeds' },
-      { text: 'Leeches', value: 'num_leeches' },
-      { text: 'Downloaded', value: 'num_downloaded' },
-      { text: 'Message', value: 'msg' }
-    ],
-    tempTrackers: [],
-    newTrackers: '',
-    selectedTrackers: []
-  }),
+  data() {
+    return {
+      trackerDialog: false,
+      headers: [
+        { text: '#', value: 'tier' },
+        { text: 'URL', value: 'url' },
+        { text: this.$t('torrent.status'), value: 'status' },
+        { text: 'Peers', value: 'num_peers' },
+        { text: this.$t('seeds'), value: 'num_seeds' },
+        { text: this.$t('torrent.leeches'), value: 'num_leeches' },
+        { text: this.$t('torrent.downloaded'), value: 'num_downloaded' },
+        { text: this.$t('torrent.message'), value: 'msg' }
+      ],
+      map: [
+        this.$t('torrent.disabled'),
+        this.$t('torrent.disconnect'),
+        this.$t('torrent.working'),
+        this.$t('torrent.updating'),
+        this.$t('torrent.notworking')
+      ],
+      tempTrackers: [],
+      newTrackers: '',
+      selectedTrackers: []
+    }
+  },
   computed: {
     trackers() {
       return this.tempTrackers.map(x => ({ ...x, isSelectable: typeof x.tier === 'number' }))
@@ -171,6 +169,9 @@ export default {
       qbit.removeTorrentTrackers(this.hash, this.selectedTrackers.map(t => t.url))
       this.selectedTrackers = []
       await this.getTorrentTrackers()
+    },
+    formatTrackerStatus(status) {
+      return this.map[status]
     }
   }
 }

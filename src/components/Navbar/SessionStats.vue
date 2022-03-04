@@ -1,7 +1,7 @@
 <template>
   <div v-if="status" class="mt-3 mb-3">
     <label class="text-uppercase white--text caption font-weight-medium ml-4">
-      Session Stats
+      {{ $t('navbar.sessionstats') }}
     </label>
     <v-tooltip bottom>
       <template #activator="{ on }">
@@ -18,11 +18,11 @@
     </v-tooltip>
     <StorageCard
       class="mb-4 mt-4"
-      label="Downloaded"
+      :label="$t('torrent.downloaded')"
       color="download"
       :value="status.downloaded"
     />
-    <StorageCard label="Uploaded" color="upload" :value="status.uploaded" />
+    <StorageCard :label="$t('torrent.uploaded')" color="upload" :value="status.uploaded" />
   </div>
 </template>
 

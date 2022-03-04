@@ -1,7 +1,7 @@
 <template>
   <div class="mt-1">
     <label class="white--text text-uppercase font-weight-medium caption ml-4">
-      Status
+      {{ $t('torrent.status') }}
     </label>
     <v-select
       name="state_filter"
@@ -11,7 +11,7 @@
       label="STATUS"
       flat
       solo
-      :items="options"
+      :items="selectedOptions"
       item-text="name"
       color="download"
       item-color="download"
@@ -62,32 +62,20 @@ import { mapGetters, mapState } from 'vuex'
 export default {
   name: 'FilterSelect',
   props: ['showTrackerFilter'],
-  data: () => ({
-    options: [
-      { value: null, name: 'All' },
-      { value: 'downloading', name: 'Downloading' },
-      { value: 'seeding', name: 'Seeding' },
-      { value: 'completed', name: 'Completed' },
-      { value: 'resumed', name: 'Resumed' },
-      { value: 'paused', name: 'Paused' },
-      { value: 'active', name: 'Active' },
-      { value: 'inactive', name: 'Inactive' },
-      { value: 'stalled', name: 'Stalled' },
-      { value: 'stalled_uploading', name: 'Stalled Uploading' },
-      { value: 'stalled_downloading', name: 'Stalled Downloading' },
-      { value: 'errored', name: 'Errored' }
-    ],
-    selectedState: null,
-    selectedCategory: null,
-    selectedTracker: null
-  }),
+  data() {
+    return {
+      selectedState: null,
+      selectedCategory: null,
+      selectedTracker: null
+    }
+  },
   computed: {
     ...mapGetters(['getCategories', 'getTrackers']),
     ...mapState(['sort_options']),
     availableCategories() {
       const categories = [
-        { name: 'All', value: null },
-        { name: 'Uncategorized', value: '' }]
+        { name: this.$t('navbar.all'), value: null },
+        { name: this.$t('navbar.uncat'), value: '' }]
       categories.push(...this.getCategories().map(c => {
         return { name: c.name, value: c.name }
       }))
@@ -96,8 +84,8 @@ export default {
     },
     availableTrackers() {
       const trackers = [
-        { name: 'All', value: null },
-        { name: 'Not working', value: '' }
+        { name: this.$t('navbar.all'), value: null },
+        { name: this.$t('torrent.notworking'), value: '' }
       ]
          
       if (this.showTrackerFilter) {
@@ -109,6 +97,22 @@ export default {
       }
 
       return trackers
+    },
+    selectedOptions() {
+      return [
+        { value: null, name: this.$t('navbar.all') },
+        { value: 'downloading', name: this.$t('navbar.downloading') },
+        { value: 'seeding', name: this.$t('navbar.seeding') },
+        { value: 'completed', name: this.$t('torrent.completed') },
+        { value: 'resumed', name: this.$t('navbar.resumed') },
+        { value: 'paused', name: this.$t('navbar.paused') },
+        { value: 'active', name: this.$t('navbar.active') },
+        { value: 'inactive', name: this.$t('navbar.inactive') },
+        { value: 'stalled', name: this.$t('navbar.stalled') },
+        { value: 'stalled_uploading', name: this.$t('navbar.stalledup') },
+        { value: 'stalled_downloading', name: this.$t('navbar.stalleddl') },
+        { value: 'errored', name: this.$t('navbar.errored') }
+      ]
     }
   },
   mounted() {
@@ -135,7 +139,8 @@ export default {
       this.applyFilter()
     },
     setDefaultValues() {
-      this.selectedState = this.options.find(o => o.value === this.sort_options.filter).value || this.options[0].value
+      const options = this.selectedOptions
+      this.selectedState = options.find(o => o.value === this.sort_options.filter).value || options[0].value
     }
   }
 }
