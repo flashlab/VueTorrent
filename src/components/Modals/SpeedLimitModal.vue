@@ -9,7 +9,7 @@
     <v-card>
       <v-card-title class="pa-0">
         <v-toolbar-title class="ma-4 primarytext--text">
-          <h3>Limit {{ mode }}</h3>
+          <h3>{{ $t('torrent.limit') }} {{ mode }}</h3>
         </v-toolbar-title>
       </v-card-title>
       <v-card-text>
@@ -20,7 +20,7 @@
                 v-model="limit"
                 autofocus
                 clearable
-                label="Speed Limit"
+                :label="$t('torrent.speedlimit')"
                 :prepend-inner-icon="mdiSpeedometer"
                 suffix="KB/s"
                 @focus="$event.target.select()"
@@ -36,13 +36,13 @@
           class="accent white--text elevation-0 px-4"
           @click="setLimit"
         >
-          Save
+          {{ $t('save') }}
         </v-btn>
         <v-btn
           class="error white--text elevation-0 px-4"
           @click="close"
         >
-          Cancel
+          {{ $t('cancel') }}
         </v-btn>
       </v-card-actions>
     </v-card>

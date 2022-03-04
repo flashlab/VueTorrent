@@ -11,7 +11,7 @@
     >
       <v-col>
         <h1 style="font-size: 1.6em !important" class="subtitle-1 ml-2">
-          Dashboard
+          {{ $t('panel.dashboard') }}
         </h1>
       </v-col>
       <v-col class="align-center justify-center">
@@ -40,7 +40,7 @@
             class="rounded-pill"
             dense
             hide-details
-            label="Search"
+            :label="$t('search')"
             :prepend-inner-icon="mdiMagnify"
             height="100%"
             width="100px"
@@ -56,7 +56,7 @@
               small
               fab
               class="mr-0 ml-0"
-              aria-label="Select Mode"
+              :aria-label="$t('panel.selectmode')"
               v-on="on"
               @click="searchFilterEnabled = !searchFilterEnabled"
             >
@@ -65,7 +65,7 @@
               </v-icon>
             </v-btn>
           </template>
-          <span>Toggle Search Filter</span>
+          <span>{{ $t('panel.togglefilter') }}</span>
         </v-tooltip>
         <v-tooltip bottom>
           <template #activator="{ on }">
@@ -74,7 +74,7 @@
               small
               fab
               class="mr-0 ml-0"
-              aria-label="Select Mode"
+              :aria-label="$t('panel.selectmode')"
               v-on="on"
               @click="toggleSelectMode()"
             >
@@ -83,7 +83,7 @@
               </v-icon>
             </v-btn>
           </template>
-          <span>Select Mode</span>
+          <span>{{ $t('panel.selectmode') }}</span>
         </v-tooltip>
         <v-tooltip bottom>
           <template #activator="{ on }">
@@ -92,7 +92,7 @@
               small
               fab
               class="mr-0 ml-0"
-              aria-label="Sort Torrents"
+              :aria-label="$t('panel.sorttorrent')"
               v-on="on"
               @click="addModal('SortModal')"
             >
@@ -101,7 +101,7 @@
               </v-icon>
             </v-btn>
           </template>
-          <span>Sort Torrents</span>
+          <span>{{ $t('panel.sorttorrent') }}</span>
         </v-tooltip>
       </v-row>
     </v-row>
@@ -120,7 +120,7 @@
                 small
                 fab
                 style="left:-8px"
-                aria-label="Select Mode"
+                :aria-label="$t('panel.selectmode')"
                 class="grey--text"
                 v-on="on"
                 @click="selectAllTorrents()"
@@ -130,17 +130,17 @@
                 </v-icon>
               </v-btn>
             </template>
-            <span>Select All</span>
+            <span>{{ $t('panel.selectall') }}</span>
           </v-tooltip>
           <span class="grey--text">
-            Select / Release All ( Ctrl + A )
+            {{ $t('panel.selrel') }} ( Ctrl + A )
           </span>
         </v-card>
       </v-expand-transition>
     </v-row>
     <div v-if="torrents.length === 0" class="mt-5 text-xs-center">
       <p class="grey--text">
-        Nothing to see here!
+        {{ $t('panel.empty') }}
       </p>
     </div>
     <div v-else>
@@ -271,7 +271,7 @@ export default {
       return this.torrents.slice(start, end)
     },
     torrentCountString() {
-      return this.getTorrentCountString()
+      return this.getTorrentCountString() + this.$t('panel.torrents')
     },
     selectMode() {
       return this.$store.state.selectMode

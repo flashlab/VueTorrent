@@ -1,8 +1,7 @@
 <template>
   <v-card flat>
     <v-subheader>
-      These settings are for the custom WebUI
-      itself
+      {{ $t('modals.settings.forcustomui') }}
     </v-subheader>
     <v-list-item>
       <v-row dense>
@@ -12,7 +11,7 @@
             class="v-input--reverse pa-0 ma-0"
             hide-details
             inset
-            label="Show Current Speed"
+            :label="$t('modals.settings.showcurrspeed')"
           />
         </v-col>
       </v-row>
@@ -25,7 +24,7 @@
             class="v-input--reverse pa-0 ma-0"
             hide-details
             inset
-            label="Show Speed Graph"
+            :label="$t('modals.settings.showspeedgraph')"
           />
         </v-col>
       </v-row>
@@ -38,7 +37,7 @@
             class="v-input--reverse pa-0 ma-0"
             hide-details
             inset
-            label="Show Session Stats"
+            :label="$t('modals.settings.showsessionstat')"
           />
         </v-col>
       </v-row>
@@ -51,7 +50,7 @@
             class="v-input--reverse pa-0 ma-0"
             hide-details
             inset
-            label="Show Free Space"
+            :label="$t('modals.settings.showfreespace')"
           />
         </v-col>
       </v-row>
@@ -64,7 +63,7 @@
             class="v-input--reverse pa-0 ma-0"
             hide-details
             inset
-            label="Show Tracker Filter"
+            :label="$t('modals.settings.showtrackerfilter')"
           />
         </v-col>
       </v-row>
@@ -77,7 +76,7 @@
             class="v-input--reverse pa-0 ma-0"
             hide-details
             inset
-            label="Right Drawer"
+            :label="$t('modals.settings.rightdrawer')"
           />
         </v-col>
       </v-row>
@@ -86,7 +85,7 @@
       <v-row dense>
         <v-col cols="8" sm="8" md="10">
           <p class="subtitle-1 mt-2">
-            Language:
+            {{ $t('modals.settings.lang') }}
           </p>
         </v-col>
         <v-col cols="4" sm="4" md="2">
@@ -107,7 +106,7 @@
       <v-row dense>
         <v-col cols="8" sm="8" md="10">
           <p class="subtitle-1 mt-2">
-            Pagination size:
+            {{ $t('modals.settings.paginationsize') }}
           </p>
         </v-col>
         <v-col cols="4" sm="4" md="2">
@@ -128,7 +127,7 @@
       <v-row dense>
         <v-col cols="8" sm="8" md="10">
           <p class="subtitle-1 mt-2">
-            VueTorrent title:
+            {{ $t('modals.settings.title') }}
           </p>
         </v-col>
         <v-col cols="4" sm="4" md="2">
@@ -149,7 +148,7 @@
       <v-row dense>
         <v-col cols="10" sm="10" md="11">
           <p class="subtitle-1">
-            Current Version:
+            {{ $t('modals.settings.version') }}
           </p>
         </v-col>
         <v-col cols="2" sm="2" md="1">
@@ -163,7 +162,7 @@
       <v-row dense>
         <v-col cols="10" sm="10" md="11">
           <p class="subtitle-1">
-            QBittorrent Version:
+            {{ $t('modals.settings.versionqb') }}
           </p>
         </v-col>
         <v-col cols="2" sm="2" md="1">
@@ -185,7 +184,7 @@ export default {
   name: 'General',
   data() {
     return {
-      languages: ['en', 'fr', 'id', 'it', 'nl', 'pt-br', 'zh-hans', 'zh-hant'],
+      languages: ['en', 'fr', 'id', 'it', 'nl', 'pt-br', 'zh', 'zh-hant'],
       paginationSizes: [5, 15, 30, 50],
       titleOptions: ['Default', 'Global Speed', 'First Torrent Status'],
       Qbitversion: 0

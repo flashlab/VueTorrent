@@ -26,7 +26,7 @@
         />
       </template>
       <template v-if="!$vuetify.breakpoint.smAndDown" #append="{ item }">
-        <span v-if="!item.icon">{{ item.children.length }} Files</span>
+        <span v-if="!item.icon">{{ item.children.length }} {{ $t('torrent.files') }}</span>
         <div v-else>
           <span>[{{ item.size }}]</span>
           <span class="ml-4">{{ item.progress }}%</span>

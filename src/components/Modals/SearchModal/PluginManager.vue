@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn @click="opened = true">
-      <v-icon>{{ mdiCog }}</v-icon> Plugin manager
+      <v-icon>{{ mdiCog }}</v-icon> {{ $t('modals.search.pluginmanager') }}
     </v-btn>
 
     <v-bottom-sheet
@@ -12,7 +12,7 @@
     >
       <v-sheet>
         <v-card>
-          <v-card-title> <v-icon>{{ mdiToyBrick }}</v-icon> Plugin manager </v-card-title>
+          <v-card-title> <v-icon>{{ mdiToyBrick }}</v-icon> {{ $t('modals.search.pluginmanager') }} </v-card-title>
           <v-card-text>
             <v-switch
               v-for="(plugin, key) in searchPlugins"
@@ -27,7 +27,7 @@
     </v-bottom-sheet>
     <v-dialog v-else v-model="opened" width="50%">
       <v-card>
-        <v-card-title> <v-icon>{{ mdiToyBrick }}</v-icon> Plugin manager </v-card-title>
+        <v-card-title> <v-icon>{{ mdiToyBrick }}</v-icon> {{ $t('modals.search.pluginmanager') }} </v-card-title>
         <v-card-text>
           <v-switch
             v-for="(plugin, key) in searchPlugins"

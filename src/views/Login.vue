@@ -3,7 +3,7 @@
     <div style="margin: 130px auto">
       <v-card max-width="400" flat>
         <v-card-title class="justify-center">
-          <h2>Login</h2>
+          <h2>{{ $t('login.login') }}</h2>
         </v-card-title>
         <div class="mr-5 ml-5" />
         <v-card-text>
@@ -11,7 +11,7 @@
             <v-text-field
               v-model="username"
               outlined
-              label="username"
+              :label="$t('username')"
               :prepend-icon="mdiAccount"
               :rules="inputRules"
               autocomplete="current email"
@@ -22,7 +22,7 @@
               v-model="password"
               outlined
               type="password"
-              label="password"
+              :label="$t('password')"
               :prepend-icon="mdiLock"
               :rules="inputRules"
               autocomplete="current password"
@@ -36,7 +36,7 @@
                 class="accent white--text mx-0 mt-3"
                 @click="login"
               >
-                Login
+                {{ $t('login.login') }}
               </v-btn>
             </v-card-actions>
           </v-form>
@@ -56,7 +56,7 @@ export default {
     return {
       username: '',
       password: '',
-      inputRules: [v => v.length >= 1 || 'At least 1 character'],
+      inputRules: [v => v.length >= 1 || this.$t('login.morethanone')],
       mdiLock, mdiAccount
     }
   },

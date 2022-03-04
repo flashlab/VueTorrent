@@ -1,0 +1,18 @@
+{
+  "category":"categoria",
+  "settings":"impostazioni",
+  "navbar":{
+     "currentSpeed":"velocità attuale",
+     "freeSpace":"spazio libero",
+     "topActions":{
+        "openSettings":"apri le impostazioni",
+        "searchNew":"cerca nuovi torrent"
+     }
+  },
+  "modals":{
+     "add":{
+        "title":"Aggiungi un Torrent",
+        "selectFiles":"Seleziona i file"
+     }
+  }
+}

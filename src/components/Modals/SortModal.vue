@@ -7,7 +7,7 @@
   >
     <v-card>
       <v-card-title class="justify-center primarytext--text">
-        <h2>Sort Torrents</h2>
+        <h2>{{ $t('panel.sorttorrent') }}</h2>
       </v-card-title>
       <v-card-text>
         <v-form class="px-6 mt-3 justify-center mx-auto">
@@ -32,7 +32,7 @@
               style="padding-left: 10px !important"
             >
               <template #label>
-                Reverse
+                {{ $t('torrent.reverse') }}
               </template>
             </v-switch>
           </v-container>
@@ -50,26 +50,26 @@ export default {
   mixins: [Modal],
   data() {
     return {
-      sortProperty: { value: 'added_on', name: 'Added On' },
+      sortProperty: { value: 'added_on', name: this.$t('torrent.added') },
       reverse: true,
       options: [
-        { value: 'added_on', name: 'Added On' },
-        { value: 'availability', name: 'Availability' },
-        { value: 'category', name: 'Category' },
-        { value: 'completed', name: 'Completed' },
-        { value: 'dlspeed', name: 'Download Speed' },
-        { value: 'downloaded', name: 'Downloaded' },
-        { value: 'eta', name: 'ETA' },
-        { value: 'name', name: 'Name' },
+        { value: 'added_on', name: this.$t('torrent.added') },
+        { value: 'availability', name: this.$t('torrent.availability') },
+        { value: 'category', name: this.$t('category') },
+        { value: 'completed', name: this.$t('torrent.completed') },
+        { value: 'dlspeed', name: this.$t('torrent.dlspeed') },
+        { value: 'downloaded', name: this.$t('torrent.downloaded') },
+        { value: 'eta', name: this.$t('torrent.eta') },
+        { value: 'name', name: this.$t('modals.search.name') },
         { value: 'num_leechs', name: 'Peers' },
-        { value: 'priority', name: 'Priority' },
-        { value: 'progress', name: 'Progress' },
-        { value: 'ratio', name: 'Ratio' },
-        { value: 'size', name: 'Size' },
-        { value: 'state', name: 'State' },
-        { value: 'time_active', name: 'Time Active' },
-        { value: 'uploaded', name: 'Uploaded' },
-        { value: 'upspeed', name: 'Upload Speed' }
+        { value: 'priority', name: this.$t('torrent.priority') },
+        { value: 'progress', name: this.$t('torrent.progress') },
+        { value: 'ratio', name: this.$t('torrent.ratio') },
+        { value: 'size', name: this.$t('modals.search.size') },
+        { value: 'state', name: this.$t('torrent.state') },
+        { value: 'time_active', name: this.$t('torrent.timeactive') },
+        { value: 'uploaded', name: this.$t('torrent.uploaded') },
+        { value: 'upspeed', name: this.$t('torrent.upspeed') }
       ]
     }
   },

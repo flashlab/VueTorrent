@@ -9,7 +9,7 @@
     <v-card class="px-2">
       <v-card-title class="pa-0">
         <v-toolbar-title class="ma-4 primarytext--text">
-          <h3>Limit Ratio</h3>
+          <h3>{{ $t('modals.share.limitratio') }}</h3>
         </v-toolbar-title>
       </v-card-title>
       <v-card-text class="px-4 py-2">
@@ -24,10 +24,10 @@
       <v-divider />
       <v-card-actions class="justify-end">
         <v-btn class="accent white--text elevation-0 px-4" @click="save">
-          Save
+          {{ $t('save') }}
         </v-btn>
         <v-btn class="error white--text elevation-0 px-4" @click="close">
-          Cancel
+          {{ $t('cancel') }}
         </v-btn>
       </v-card-actions>
     </v-card>
