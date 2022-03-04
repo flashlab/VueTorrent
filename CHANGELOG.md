@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.15.4](https://www.github.com/flashlab/VueTorrent/compare/v0.15.3...v0.15.4) (2022-03-04)
+
+
+### Improvements
+
+* improve translation(zh-cn finished currently) [#331](https://www.github.com/flashlab/VueTorrent/issues/331) [#298](https://www.github.com/flashlab/VueTorrent/issues/298) ([a6a72bd](https://www.github.com/flashlab/VueTorrent/commit/a6a72bd89737a1dbb658f52052cfd0ee63526551))
+
 ### [0.15.3](https://www.github.com/WDaan/VueTorrent/compare/v0.15.2...v0.15.3) (2022-02-28)
 
 
