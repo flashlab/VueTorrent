@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "df721842cecef05c0555",
-    "url": "css/app.155e4f44.css"
+    "revision": "549f1b1099102af38481",
+    "url": "css/app.8e826b57.css"
   },
   {
     "revision": "791dd9fbeec97969fc39",
@@ -252,12 +252,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icons/safari-pinned-tab.svg"
   },
   {
-    "revision": "3aaa9beecbc9a9448cda2a49106481a4",
+    "revision": "3b1abba9ab44fe74ad519fed811b8c1c",
     "url": "index.html"
   },
   {
-    "revision": "df721842cecef05c0555",
-    "url": "js/app.77caeae8.js"
+    "revision": "549f1b1099102af38481",
+    "url": "js/app.95cb5a11.js"
   },
   {
     "revision": "791dd9fbeec97969fc39",
@@ -284,12 +284,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/lang-pt-br-js.9bcb5e02.js"
   },
   {
-    "revision": "fe5fe54c384dbcf6132e",
-    "url": "js/lang-zh-hans-js.0740b757.js"
-  },
-  {
     "revision": "c0974b31d63021426c6b",
     "url": "js/lang-zh-hant-js.0f518317.js"
+  },
+  {
+    "revision": "fc296ab53cadda4499f2",
+    "url": "js/lang-zh-js.55fa7c89.js"
   },
   {
     "revision": "6e8a2492cea9fdb09232239bf3c14191",
