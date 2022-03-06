@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.15.5](https://www.github.com/flashlab/VueTorrent/compare/v0.15.4...v0.15.5) (2022-03-06)
+
+
+### Bug Fixes
+
+* translation caused theme failure ([63a6f91](https://www.github.com/flashlab/VueTorrent/commit/63a6f913dbf6036c24580fdab3a5085d7a6aa5bd))
+
 ### [0.15.4](https://www.github.com/flashlab/VueTorrent/compare/v0.15.5...v0.15.4) (2022-03-06)
 
 
