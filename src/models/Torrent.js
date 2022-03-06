@@ -1,5 +1,3 @@
-import { i18n } from '../lang'
-
 export default class Torrent {
   constructor(data) {
     this.name = data.name
@@ -42,34 +40,34 @@ export default class Torrent {
     switch (state) {
       case 'forcedDL':
       case 'downloading':
-        return i18n.t('torrent.download')
+        return 'Downloading'
       case 'metaDL':
-        return i18n.t('navbar.metadata')
+        return 'Metadata'
       case 'forcedUP':
       case 'uploading':
       case 'stalledUP':
-        return i18n.t('navbar.seeding')
+        return 'Seeding'
       case 'pausedDL':
-        return i18n.t('navbar.paused')
+        return 'Paused'
       case 'pausedUP':
-        return i18n.t('navbar.done')
+        return 'Done'
       case 'queuedDL':
       case 'queuedUP':
-        return i18n.t('navbar.queued')
+        return 'Queued'
       case 'allocating':
       case 'checkingDL':
       case 'checkingUP':
       case 'checkingResumeData':
-        return i18n.t('navbar.checking')
+        return 'Checking'
       case 'moving':
-        return i18n.t('navbar.moving')
+        return 'Moving'
       case 'unknown':
       case 'missingFiles':
-        return i18n.t('navbar.fail')
+        return 'Fail'
       case 'stalledDL':
-        return i18n.t('navbar.stalled')
+        return 'Stalled'
       default:
-        return i18n.t('navbar.fail')
+        return 'Fail'
     }
   }
 

@@ -25,11 +25,12 @@ export default {
   props: ['torrent'],
   computed: {
     stateString() {
+      const statString = this.$t(`navbar.${this.torrent.state.toLowerCase()}`)
       if (this.torrent.forced) {
-        return `[F] ${this.torrent.state}`
-      }      
+        return `[F] ${statString}`
+      }
       
-      return this.torrent.state
+      return statString
     }
   }
 }
