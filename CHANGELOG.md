@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.15.5](https://www.github.com/flashlab/VueTorrent/compare/v0.15.4...v0.15.5) (2022-03-06)
+
+
+### Bug Fixes
+
+* enable sort with tags; i18n update ([8a0283e](https://www.github.com/flashlab/VueTorrent/commit/8a0283ef50c32282ca3e3111f3bcdea28f04149c))
+
 ### [0.15.4](https://www.github.com/flashlab/VueTorrent/compare/v0.15.3...v0.15.4) (2022-03-04)
 
 
