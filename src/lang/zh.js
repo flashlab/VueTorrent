@@ -56,7 +56,7 @@ const locale = {
     status: '状态',
     pieceprior: '先下载首尾文件块',
     sequential: '按顺序下载',
-    autotmm: 'Auto TMM',
+    autotmm: '自动Torrent管理',
     shareratiolimit: '分享率限制',
     sharetimelimit: '分享时长显示 (分钟)',
     downloadlimit: '下载限制',
@@ -127,7 +127,13 @@ const locale = {
     dark: '深色',
     light: '浅色',
     sessionstats: '会话状态',
-    secago: ' 秒之前'
+    secago: ' 秒之前',
+    checking: "检查中",
+    done: "完成",
+    fail: "失败",
+    metadata: "元数据",
+    moving: "移动中",
+    queued: "排队"
   },
 
   /** Modals */

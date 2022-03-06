@@ -51,7 +51,7 @@
     "status": "状态",
     "pieceprior": "先下载首尾文件块",
     "sequential": "按顺序下载",
-    "autotmm": "Auto TMM",
+    "autotmm": "自动Torrent管理",
     "shareratiolimit": "分享率限制",
     "sharetimelimit": "分享时长显示 (分钟)",
     "downloadlimit": "下载限制",

@@ -69,7 +69,8 @@ export default {
         { value: 'state', name: this.$t('torrent.state') },
         { value: 'time_active', name: this.$t('torrent.timeactive') },
         { value: 'uploaded', name: this.$t('torrent.uploaded') },
-        { value: 'upspeed', name: this.$t('torrent.upspeed') }
+        { value: 'upspeed', name: this.$t('torrent.upspeed') },
+        { value: 'tags', name: this.$t('torrent.tags') }
       ]
     }
   },
