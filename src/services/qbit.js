@@ -276,14 +276,13 @@ class Qbit {
     return this.execute('post', `/torrents/${action}`, params)
   }
 
-  renameFile(hash, id, name) {
-    const params = {
-      hash,
-      id,
-      name
-    }
+  renameFile(hash, oldPath, newPath, isFolder) {
+    const data = new FormData()
+    data.append('hash', hash)
+    data.append('oldPath', oldPath)
+    data.append('newPath', newPath)
 
-    return this.execute('post', '/torrents/renameFile', params)
+    return this.axios.post(`/torrents/${isFolder ? 'renameFolder' : 'renameFile'}`, data)
   }
 
   /** Torrent Priority **/
