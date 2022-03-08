@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.15.6](https://www.github.com/flashlab/VueTorrent/compare/v0.15.5...v0.15.6) (2022-03-08)
+
+
+### Improvements
+
+* rewrite i18n & small translation fix ([fa59795](https://www.github.com/flashlab/VueTorrent/commit/fa59795b6a31f30ef83e737bfc8020ea6aaf84b5))
+
 ### [0.15.5](https://www.github.com/flashlab/VueTorrent/compare/v0.15.4...v0.15.5) (2022-03-06)
 
 
