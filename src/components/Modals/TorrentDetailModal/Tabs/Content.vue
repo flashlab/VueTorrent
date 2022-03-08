@@ -6,7 +6,7 @@
       :open.sync="opened"
       activatable
       selectable
-      item-key="fullName"
+      item-key="fullName + name"
       open-all
     >
       <template #prepend="{ item, open }">
@@ -25,67 +25,72 @@
           autofocus
         />
       </template>
-      <template #append="{ item }">
-        <span v-if="!item.icon">{{ item.children.length }} {{ $t('torrent.files') }}</span>
-        <div v-else>
-          <span>[{{ item.size }}]</span>
-          <span class="ml-4">{{ item.progress }}%</span>
-          <span class="ml-4">[ {{ priority(item.priority) }} ]</span>
-          <v-menu
-            open-on-hover
-            offset-y
-          >
-            <template #activator="{ on }">
-              <v-btn
-                fab
-                x-small
-                class="accent white--text elevation-0 px-4 ml-2"
-                v-on="on"
-              >
-                <v-icon>{{ mdiTrendingUp }}</v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item
-                v-for="prio in priority_options"
-                :key="prio.value"
-                link
-                @click="setFilePrio(item.id, prio.value)"
-              >
-                <v-icon>{{ prio.icon }}</v-icon>
-                <v-list-item-title class="caption">
-                  {{ $t(`torrent.${prio.name}`) }} 
-                </v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-          <v-btn
-            v-if="!item.editing"
-            fab
-            x-small
-            class="accent white--text elevation-0 px-4 ml-2"
-            @click="edit(item)"
-          >
-            <v-icon>{{ mdiPencil }}</v-icon>
-          </v-btn>
-          <v-btn
-            v-if="item.editing"
-            fab
-            x-small
-            class="accent white--text elevation-0 px-4 ml-2"
-            @click="renameFile(item)"
-          >
-            <v-icon>{{ mdiContentSave }}</v-icon>
-          </v-btn>
-          <v-btn
-            v-if="item.editing"
-            fab
-            x-small
-            class="error white--text elevation-0 px-4 ml-2"
-            @click="togleEditing(item)"
-          >
-            <v-icon>{{ mdiClose }}</v-icon>
-          </v-btn>
+      <template #append="{ item }" class="d-flex">
+        <div class="d-flex">
+          <span v-if="!item.icon">{{ item.children.length }} {{ $t('torrent.files') }}</span>
+          <div v-else>
+            <span>[{{ item.size }}]</span>
+            <span class="ml-4">{{ item.progress }}%</span>
+            <span class="ml-4">[ {{ priority(item.priority) }} ]</span>
+          </div>
+          <div>
+            <v-menu
+              v-if="!!item.icon"
+              open-on-hover
+              offset-y
+            >
+              <template #activator="{ on }">
+                <v-btn
+                  fab
+                  x-small
+                  class="accent white--text elevation-0 px-4 ml-2"
+                  v-on="on"
+                >
+                  <v-icon>{{ mdiTrendingUp }}</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="prio in priority_options"
+                  :key="prio.value"
+                  link
+                  @click="setFilePrio(item.id, prio.value)"
+                >
+                  <v-icon>{{ prio.icon }}</v-icon>
+                  <v-list-item-title class="caption">
+                    {{ $t(`torrent.${prio.name}`) }} 
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+            <v-btn
+              v-if="!item.editing"
+              fab
+              x-small
+              class="accent white--text elevation-0 px-4 ml-2"
+              @click="edit(item)"
+            >
+              <v-icon>{{ mdiPencil }}</v-icon>
+            </v-btn>
+            <v-btn
+              v-if="item.editing"
+              fab
+              x-small
+              class="accent white--text elevation-0 px-4 ml-2"
+              @click="renameFile(item)"
+            >
+              <v-icon>{{ mdiContentSave }}</v-icon>
+            </v-btn>
+            <v-btn
+              v-if="item.editing"
+              fab
+              x-small
+              class="error white--text elevation-0 px-4 ml-2"
+              @click="togleEditing(item)"
+            >
+              <v-icon>{{ mdiClose }}</v-icon>
+            </v-btn>
+          </div>
         </div>
       </template>
     </v-treeview>
@@ -208,7 +213,8 @@ export default {
       this.togleEditing(item)
     },
     renameFile(item) {
-      qbit.renameFile(this.hash, item.id, item.newName)
+      const newFullName = [item.fullName, item.newName].filter(Boolean).join('/')
+      qbit.renameFile(this.hash, [item.fullName, item.name].filter(Boolean).join('/'), newFullName, !item.icon)
       item.name = item.newName
       this.togleEditing(item)
     },

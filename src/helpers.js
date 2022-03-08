@@ -61,9 +61,10 @@ export function treeify(paths) {
   const level = { result }
 
   paths.forEach(path => {
-    path.name.split('/').reduce((r, name) => {
+    path.name.split('/').reduce((r, name, i, arr) => {
       if (!r[name]) {
         r[name] = { result: [] }
+        path.name = arr.slice(0, i).join('/')
         r.result.push(createFile(path, name, r[name].result))
       }
 
@@ -76,7 +77,7 @@ export function treeify(paths) {
 
   function parseFolder(el) {
     if (el.children.length !== 0) {
-      const folder = createFolder(el.name, el.children)
+      const folder = createFolder(el.name, el.fullName, el.children)
       folder.children = folder.children.map(el => parseFolder(el))
       
       return folder
@@ -101,10 +102,10 @@ function createFile(data, name, children) {
   }
 }
 
-function createFolder(name, children) {
+function createFolder(name, fullName, children) {
   return {
     name: name,
-    fullName: name,
+    fullName: fullName,
     type: 'directory',
     children: children
   }
