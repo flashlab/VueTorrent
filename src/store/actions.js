@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import qbit from '../services/qbit'
-import { i18n } from '../lang'
+import { i18n } from '../locale'
 
 export default {
   INIT_INTERVALS: async context => {

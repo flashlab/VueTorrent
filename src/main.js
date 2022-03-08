@@ -7,7 +7,7 @@ import '@babel/polyfill'
 import vuetify from './plugins/vuetify'
 import 'typeface-roboto'
 import 'typeface-roboto-mono'
-import { i18n } from './lang/index'
+import { i18n } from './locale/index'
 
 /* eslint-disable no-unused-vars */
 import filters from '@/filters'

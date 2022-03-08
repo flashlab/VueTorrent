@@ -1,6 +1,6 @@
 import qbit from '../services/qbit'
 import { DocumentTitle, Tags, Trackers, Torrents, Graph, ServerStatus } from '@/actions'
-import { loadLanguageAsync } from '../lang'
+import { loadLanguageAsync } from '../locale'
 
 export default {
   SET_APP_VERSION(state, version) {
