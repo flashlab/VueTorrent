@@ -180,11 +180,12 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import qbit from '@/services/qbit'
+import { languagesAvailable } from '@/locale/index'
 export default {
   name: 'General',
   data() {
     return {
-      languages: ['en', 'fr', 'id', 'it', 'nl', 'pt-br', 'zh', 'zh-hant'],
+      languages: languagesAvailable,
       paginationSizes: [5, 15, 30, 50],
       titleOptions: ['Default', 'Global Speed', 'First Torrent Status'],
       Qbitversion: 0

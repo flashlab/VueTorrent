@@ -79,6 +79,12 @@ $sideborder-margin: 6px;
 .v-application a {
     color: inherit !important;
 }  
+.v-treeview {
+    overflow-x: auto;
+    .v-treeview-node{
+        width: max-content;
+    }
+}
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */

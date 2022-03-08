@@ -16,7 +16,7 @@
         :class="torrent.state.toLowerCase()"
         style="height: 20px;"
       >
-        {{ torrent.state }}
+        {{ $t(`navbar.${torrent.state.toLowerCase()}`) }}
       </v-chip>
       <v-chip
         v-if="torrent.category"

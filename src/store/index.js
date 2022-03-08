@@ -4,6 +4,7 @@ import VuexPersist from 'vuex-persist'
 import actions from './actions'
 import getters from './getters'
 import mutations from './mutations'
+import { navigatorLanguage } from '../locale'
 
 const vuexPersist = new VuexPersist({
   key: 'vuetorrent',
@@ -50,7 +51,7 @@ export default new Vuex.Store({
     modals: [],
     settings: {},
     webuiSettings: {
-      lang: navigator.language.split('-')[0],
+      lang: navigatorLanguage(),
       darkTheme: false,
       showFreeSpace: true,
       showSpeedGraph: true,

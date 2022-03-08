@@ -25,12 +25,12 @@
           autofocus
         />
       </template>
-      <template v-if="!$vuetify.breakpoint.smAndDown" #append="{ item }">
+      <template #append="{ item }">
         <span v-if="!item.icon">{{ item.children.length }} {{ $t('torrent.files') }}</span>
         <div v-else>
           <span>[{{ item.size }}]</span>
           <span class="ml-4">{{ item.progress }}%</span>
-          <span class="ml-4">[ {{ item.priority | priority }} ]</span>
+          <span class="ml-4">[ {{ priority(item.priority) }} ]</span>
           <v-menu
             open-on-hover
             offset-y
@@ -54,7 +54,7 @@
               >
                 <v-icon>{{ prio.icon }}</v-icon>
                 <v-list-item-title class="caption">
-                  {{ prio.name }}
+                  {{ $t(`torrent.${prio.name}`) }} 
                 </v-list-item-title>
               </v-list-item>
             </v-list>
@@ -111,14 +111,6 @@ const FILE_PRIORITY_OPTIONS = [
 
 export default {
   name: 'Content',
-  filters: {
-    priority(value) {
-      if (value === 4) return 'normal'
-      const res = FILE_PRIORITY_OPTIONS.find(el => el.value === value)
-      
-      return res ? res.name : 'undefined'
-    }
-  },
   mixins: [FullScreenModal],
   props: {
     hash: String,
@@ -223,6 +215,12 @@ export default {
     setFilePrio(fileId, priority) {
       qbit.setTorrentFilePriority(this.hash, [fileId], priority)
         .then(() => this.initFiles())
+    },
+    priority(value) {
+      if (value === 4) return this.$t('torrent.normal')
+      const res = FILE_PRIORITY_OPTIONS.find(el => el.value === value)
+      
+      return res ? this.$t(`torrent.${res.name}`) : this.$t('torrent.undefined')
     }
   }
 }
