@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "160bab584e32c407a45c",
-    "url": "css/app.78cf1fb6.css"
+    "revision": "4ea304e82f64f5c9643c",
+    "url": "css/app.47db997f.css"
   },
   {
     "revision": "6a45e9e646087e67bc0e",
@@ -252,44 +252,44 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icons/safari-pinned-tab.svg"
   },
   {
-    "revision": "11e096e2c4421c9d31879fbace9652a3",
+    "revision": "85dc007ba1aad6b02a2b4dd9bcbf63e6",
     "url": "index.html"
   },
   {
-    "revision": "160bab584e32c407a45c",
-    "url": "js/app.22a73c4f.js"
+    "revision": "4ea304e82f64f5c9643c",
+    "url": "js/app.9ff1f676.js"
   },
   {
     "revision": "6a45e9e646087e67bc0e",
     "url": "js/chunk-vendors.38f86353.js"
   },
   {
-    "revision": "744eeb249142f81a2a17",
-    "url": "js/lang-fr-js.b969a9d2.js"
+    "revision": "0762064d23164764a839",
+    "url": "js/lang-fr-json.0f437a13.js"
   },
   {
-    "revision": "27d942de8f515b008a3b",
-    "url": "js/lang-id-js.d7f51358.js"
+    "revision": "240ef0d75af7a8277bc8",
+    "url": "js/lang-id-json.e734cc5a.js"
   },
   {
-    "revision": "8bad937155f005812c11",
-    "url": "js/lang-it-js.89d35d96.js"
+    "revision": "8912fa6cd776ee663389",
+    "url": "js/lang-it-json.fcada59a.js"
   },
   {
-    "revision": "25de164f626da1c8e12d",
-    "url": "js/lang-nl-js.3ec7d5a4.js"
+    "revision": "a5b396c7bf737e486521",
+    "url": "js/lang-nl-json.d0d5827f.js"
   },
   {
-    "revision": "d9fef8ceb6a0dee66a22",
-    "url": "js/lang-pt-br-js.9bcb5e02.js"
+    "revision": "e10586fa2baf51b4c200",
+    "url": "js/lang-pt-br-json.68104af3.js"
   },
   {
-    "revision": "c0974b31d63021426c6b",
-    "url": "js/lang-zh-hant-js.0f518317.js"
+    "revision": "45ab893c5b0561e021a4",
+    "url": "js/lang-zh-hant-json.f62b21f9.js"
   },
   {
-    "revision": "14089e7ad0485772f25e",
-    "url": "js/lang-zh-js.c16567b1.js"
+    "revision": "dc385fa0517cf5d9b689",
+    "url": "js/lang-zh-json.29dc9865.js"
   },
   {
     "revision": "6e8a2492cea9fdb09232239bf3c14191",

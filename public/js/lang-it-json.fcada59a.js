@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["lang-it-json"],{1632:function(e){e.exports=JSON.parse('{"category":"categoria","settings":"impostazioni","navbar":{"currentSpeed":"velocità attuale","freeSpace":"spazio libero","topActions":{"openSettings":"apri le impostazioni","searchNew":"cerca nuovi torrent"}},"modals":{"add":{"title":"Aggiungi un Torrent","selectFiles":"Seleziona i file"}}}')}}]);
+//# sourceMappingURL=lang-it-json.fcada59a.js.map
