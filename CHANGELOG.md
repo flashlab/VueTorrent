@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.16.0](https://www.github.com/flashlab/VueTorrent/compare/v0.15.5...v0.16.0) (2022-03-11)
+
+
+### Features
+
+* enable edit folder name ([f4c30b0](https://www.github.com/flashlab/VueTorrent/commit/f4c30b03c74a9252093aa4face688fd32060a87f))
+
+
+### Improvements
+
+* rewrite i18n & small translation fix ([fa59795](https://www.github.com/flashlab/VueTorrent/commit/fa59795b6a31f30ef83e737bfc8020ea6aaf84b5))
+* show uploaded instead of downloaded in mobile card ([997b2f4](https://www.github.com/flashlab/VueTorrent/commit/997b2f4856f68cd3f268609240fd023f5e9a7819))
+
 ### [0.15.5](https://www.github.com/flashlab/VueTorrent/compare/v0.15.4...v0.15.5) (2022-03-06)
 
 
