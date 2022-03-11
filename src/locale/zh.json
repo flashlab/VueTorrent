@@ -148,7 +148,8 @@
       "size": "大小",
       "peers": "Peers",
       "engine": "搜索引擎",
-      "action": "操作"
+      "action": "操作",
+      "searchtermrequired": "关键词不能为空"
     },
     "settings": {
       "vuetorrent": "vuetorrent",

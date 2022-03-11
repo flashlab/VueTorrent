@@ -21,7 +21,7 @@
                 v-model="searchForm.pattern"
                 :prepend-inner-icon="mdiMagnify"
                 :label="$t('search')"
-                :rules="[v => !!v || 'Searchterm is required']"
+                :rules="[v => !!v || $t('modals.search.searchtermrequired')]"
                 clearable
                 style="width: 95%;"
                 @keydown.enter="$refs.searchButton.click"

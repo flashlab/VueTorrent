@@ -148,7 +148,8 @@
       "name": "Name",
       "peers": "Peers",
       "pluginmanager": "Plugin manager",
-      "size": "Size"
+      "size": "Size",
+      "searchtermrequired": "searchterm is required"
     },
     "settings": {
       "appendtoincomplete": "Append .!qB extension to incomplete files",

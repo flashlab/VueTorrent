@@ -32,7 +32,7 @@
           class="ma-0 pa-0 mt-1 transparent"
         >
           <v-text-field
-            v-model="input"
+            v-model="inputDelay"
             autofocus
             flat
             solo
@@ -209,6 +209,7 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import Fuse from 'fuse.js'
+import * as _ from 'lodash'
 import { mdiTextBoxSearch, mdiChevronLeftCircle, mdiMagnify, mdiCheckboxMarked, mdiCheckboxBlankOutline, mdiSort } from '@mdi/js'
 
 import Torrent from '@/components/Torrent/Torrent'
@@ -232,6 +233,7 @@ export default {
 
       trcMoveTick: 0,
       input: '',
+      inputDelay: '',
       searchFilterEnabled: false,
       pageNumber: 1,
       mdiTextBoxSearch, mdiChevronLeftCircle, mdiMagnify, mdiCheckboxBlankOutline, mdiCheckboxMarked, mdiSort
@@ -290,7 +292,10 @@ export default {
   watch: {
     torrents: function (torrents) {
       this.$store.commit('SET_CURRENT_ITEM_COUNT', torrents.length)
-    }
+    },
+    inputDelay: _.debounce(function (s) {
+      this.input = s
+    }, 500)
   },
   mounted() {
     document.addEventListener('keydown', this.handleKeyboardShortcut)
