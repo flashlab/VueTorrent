@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.15.5](https://www.github.com/flashlab/VueTorrent/compare/v0.15.4...v0.15.5) (2022-03-15)
+
+
+### Improvements
+
+* show tags in mobile card ([08b8419](https://www.github.com/flashlab/VueTorrent/commit/08b84197aaf3716c673a9646f6de065bf826a43e))
+
 ### [0.15.4](https://www.github.com/flashlab/VueTorrent/compare/v0.16.0...v0.15.4) (2022-03-15)
 
 
