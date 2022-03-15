@@ -1,5 +1,30 @@
 # Changelog
 
+### [0.15.4](https://www.github.com/flashlab/VueTorrent/compare/v0.16.0...v0.15.4) (2022-03-15)
+
+
+### Features
+
+* enable edit folder name ([a762e97](https://www.github.com/flashlab/VueTorrent/commit/a762e971887c872bf1be37e613f2c93c78890b20))
+
+
+### Bug Fixes
+
+* content broken ([df322e1](https://www.github.com/flashlab/VueTorrent/commit/df322e126bc4913cfa7fa13f983b4ed12caf4441))
+* debounce torrent filter ([1f03534](https://www.github.com/flashlab/VueTorrent/commit/1f035349f919b7b1581e5d4395fe434ea8cfd443))
+* enable sort with tags & i18n update ([f32595e](https://www.github.com/flashlab/VueTorrent/commit/f32595e6db1dd2e69aaa7676dbc8ef4561ac1a52))
+* low visibility text in dark theme ([#390](https://www.github.com/flashlab/VueTorrent/issues/390)) ([84750af](https://www.github.com/flashlab/VueTorrent/commit/84750af3d4d584f5fc0fd8f3cbabd1b0ecfa2e9f))
+* search results not loading until stopped ([#391](https://www.github.com/flashlab/VueTorrent/issues/391)) ([8b126d8](https://www.github.com/flashlab/VueTorrent/commit/8b126d8df5607f1c31174fec81f86091f4ad47cf))
+* translation caused theme failure ([a7de0fa](https://www.github.com/flashlab/VueTorrent/commit/a7de0fad6492458e329a8e83549999ef55b44e87))
+
+
+### Improvements
+
+* add Vietnamese ([#392](https://www.github.com/flashlab/VueTorrent/issues/392)) ([6019759](https://www.github.com/flashlab/VueTorrent/commit/6019759260d6561af29dbeb1a95497028b2b8b87))
+* improve translation(zh-cn finished currently) [#331](https://www.github.com/flashlab/VueTorrent/issues/331) [#298](https://www.github.com/flashlab/VueTorrent/issues/298) ([efed41c](https://www.github.com/flashlab/VueTorrent/commit/efed41c069ece0bc5c3f61799b9d3c896eab1360))
+* rewrite i18n & small translation fix ([8b43df3](https://www.github.com/flashlab/VueTorrent/commit/8b43df368bcab285e2d419714c956dfdd609a047))
+* show uploaded instead of downloaded in mobile card ([d8f30d4](https://www.github.com/flashlab/VueTorrent/commit/d8f30d477ad9041bce32ce1b177b1172944385fd))
+
 ## [0.16.0](https://www.github.com/flashlab/VueTorrent/compare/v0.15.5...v0.16.0) (2022-03-11)
 
 
