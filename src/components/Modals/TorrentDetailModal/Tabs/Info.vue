@@ -122,7 +122,7 @@
               small
               :class="`${torrent.state.toLowerCase()} white--text caption`"
             >
-              {{ torrent.state }}
+              {{ $t(`navbar.${torrent.state.toLowerCase()}`) }}
             </v-chip>
           </td>
         </tr>

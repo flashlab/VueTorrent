@@ -21,10 +21,21 @@
       <v-chip
         v-if="torrent.category"
         small
+        label
         class="upload caption white--text"
         style="height: 20px;"
       >
         {{ torrent.category }}
+      </v-chip>
+      <v-chip
+        v-for="tag in torrent.tags"
+        :key="tag"
+        small
+        label
+        class="download caption white--text ml-2"
+        style="height: 20px;"
+      >
+        {{ tag }}
       </v-chip>
     </v-flex>
     <v-flex xs12 class="pa-0 ma-1 row">
