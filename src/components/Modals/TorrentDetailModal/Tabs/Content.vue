@@ -6,7 +6,7 @@
       :open.sync="opened"
       activatable
       selectable
-      item-key="fullName + name"
+      item-key="fullName"
       open-all
     >
       <template #prepend="{ item, open }">
@@ -213,8 +213,8 @@ export default {
       this.togleEditing(item)
     },
     renameFile(item) {
-      const newFullName = [item.fullName, item.newName].filter(Boolean).join('/')
-      qbit.renameFile(this.hash, [item.fullName, item.name].filter(Boolean).join('/'), newFullName, !item.icon)
+      const newFullName = item.fullName.substring(0, item.fullName.lastIndexOf(item.name)) + item.newName
+      qbit.renameFile(this.hash, item.fullName, newFullName, !item.icon)
       item.name = item.newName
       this.togleEditing(item)
     },

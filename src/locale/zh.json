@@ -116,7 +116,7 @@
     "paused": "暂停",
     "active": "活动",
     "inactive": "空闲",
-    "stalled": "暂停",
+    "stalled": "等待",
     "stalledup": "上传已暂停",
     "stalleddl": "下载已暂停",
     "errored": "错误",

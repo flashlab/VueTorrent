@@ -64,7 +64,7 @@ export function treeify(paths) {
     path.name.split('/').reduce((r, name, i, arr) => {
       if (!r[name]) {
         r[name] = { result: [] }
-        path.name = arr.slice(0, i).join('/')
+        path.name = arr.slice(0, i + 1).join('/')
         r.result.push(createFile(path, name, r[name].result))
       }
 
