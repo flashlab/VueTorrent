@@ -46,6 +46,19 @@
       <v-row dense>
         <v-col>
           <v-switch
+            v-model="showAlltimeStat"
+            class="v-input--reverse pa-0 ma-0"
+            hide-details
+            inset
+            :label="$t('modals.settings.allTimeStats')"
+          />
+        </v-col>
+      </v-row>
+    </v-list-item>
+    <v-list-item>
+      <v-row dense>
+        <v-col>
+          <v-switch
             v-model="freeSpace"
             class="v-input--reverse pa-0 ma-0"
             hide-details
@@ -226,6 +239,14 @@ export default {
         this.webuiSettings.showSessionStat = val
       }
     },
+    showAlltimeStat: {
+      get() {
+        return this.webuiSettings.showAlltimeStat
+      },
+      set(val) {
+        this.webuiSettings.showAlltimeStat = val
+      }
+    },
     showTrackerFilter: {
       get() {
         return this.webuiSettings.showTrackerFilter
@@ -283,12 +304,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep .v-select .v-select__selection {
+:deep(.v-select .v-select__selection) {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
 // Reversed input variant
-::v-deep .v-input--reverse .v-input__slot {
+:deep(.v-input--reverse .v-input__slot) {
   @import "src/styles/styles.scss";
   @include reverse-switch;
 }

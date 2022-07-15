@@ -107,10 +107,18 @@ export default {
   },
   mixins: [FullScreenModal],
   props: { hash: String, isActive: Boolean },
-  data() {
-    return {
-      trackerDialog: false,
-      headers: [
+  data: () => ({
+    trackerDialog: false,
+    tempTrackers: [],
+    newTrackers: '',
+    selectedTrackers: []
+  }),
+  computed: {
+    trackers() {
+      return this.tempTrackers.map(x => ({ ...x, isSelectable: typeof x.tier === 'number' }))
+    },
+    headers() {
+      return [
         { text: '#', value: 'tier' },
         { text: 'URL', value: 'url' },
         { text: this.$t('torrent.status'), value: 'status' },
@@ -119,22 +127,16 @@ export default {
         { text: this.$t('torrent.leeches'), value: 'num_leeches' },
         { text: this.$t('torrent.downloaded'), value: 'num_downloaded' },
         { text: this.$t('torrent.message'), value: 'msg' }
-      ],
-      map: [
+      ]
+    },
+    maps() {
+      return [
         this.$t('torrent.disabled'),
         this.$t('torrent.disconnect'),
         this.$t('torrent.working'),
         this.$t('torrent.updating'),
         this.$t('torrent.notworking')
-      ],
-      tempTrackers: [],
-      newTrackers: '',
-      selectedTrackers: []
-    }
-  },
-  computed: {
-    trackers() {
-      return this.tempTrackers.map(x => ({ ...x, isSelectable: typeof x.tier === 'number' }))
+      ]
     }
   },
   watch: {
@@ -171,7 +173,7 @@ export default {
       await this.getTorrentTrackers()
     },
     formatTrackerStatus(status) {
-      return this.map[status]
+      return this.maps[status]
     }
   }
 }
@@ -180,8 +182,8 @@ export default {
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
 
-::v-deep .v-data-table thead th,
-::v-deep .v-data-table tbody td {
+:deep(.v-data-table thead th),
+:deep(.v-data-table tbody td) {
   padding: 0 3px !important;
   height: auto;
 
@@ -192,10 +194,10 @@ export default {
     padding-right: 8px !important;
   }
 }
-::v-deep .v-data-table-header {
+:deep(.v-data-table-header) {
   white-space: nowrap;
 }
-::v-deep td {
+:deep(td) {
   white-space: nowrap;
 }
 </style>

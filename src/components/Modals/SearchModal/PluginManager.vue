@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn @click="opened = true">
-      <v-icon>{{ mdiCog }}</v-icon> {{ $t('modals.search.pluginmanager') }}
+      <v-icon>{{ mdiCog }}</v-icon> {{ $t('modals.search.pluginmanager') | titleCase }}
     </v-btn>
 
     <v-bottom-sheet

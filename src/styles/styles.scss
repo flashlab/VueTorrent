@@ -86,6 +86,10 @@ $sideborder-margin: 6px;
     }
 }
 
+:root {
+  color-scheme: dark
+}
+
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

@@ -8,7 +8,7 @@
       aria-label="state_filter"
       :value="selectedState"
       class="ml-2 mr-2"
-      label="STATUS"
+      :label="$t('status')"
       flat
       solo
       :items="selectedOptions"
@@ -27,7 +27,7 @@
       flat
       solo
       class="ml-2 mr-2"
-      label="CATEGORIES"
+      :label="$t('category')"
       :items="availableCategories"
       item-text="name"
       color="download"
@@ -62,16 +62,30 @@ import { mapGetters, mapState } from 'vuex'
 export default {
   name: 'FilterSelect',
   props: ['showTrackerFilter'],
-  data() {
-    return {
-      selectedState: null,
-      selectedCategory: null,
-      selectedTracker: null
-    }
-  },
+  data: () => ({
+    selectedState: null,
+    selectedCategory: null,
+    selectedTracker: null
+  }),
   computed: {
     ...mapGetters(['getCategories', 'getTrackers']),
     ...mapState(['sort_options']),
+    options() {
+      return [
+        { value: null, name: this.$i18n.t('all') },
+        { value: 'downloading', name: this.$i18n.t('downloading') },
+        { value: 'seeding', name: this.$i18n.t('seeding') },
+        { value: 'completed', name: this.$i18n.t('completed') },
+        { value: 'resumed', name: this.$i18n.t('resumed') },
+        { value: 'paused', name: this.$i18n.t('paused') },
+        { value: 'active', name: this.$i18n.t('active') },
+        { value: 'inactive', name: this.$i18n.t('inactive') },
+        { value: 'stalled', name: this.$i18n.t('stalled') },
+        { value: 'stalled_uploading', name: this.$i18n.t('navbar.filters.stalled_uploading') },
+        { value: 'stalled_downloading', name: this.$i18n.t('navbar.filters.stalled_downloading') },
+        { value: 'errored', name: this.$i18n.t('errored') }
+      ]
+    },
     availableCategories() {
       const categories = [
         { name: this.$t('navbar.all'), value: null },

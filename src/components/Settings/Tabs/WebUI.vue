@@ -67,7 +67,7 @@
             outlined
             dense
             hide-details="true"
-            label="password"
+            :label="$t('modals.settings.pageWebUI.password')"
           />
         </v-col>
       </v-row>

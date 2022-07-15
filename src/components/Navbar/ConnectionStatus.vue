@@ -8,7 +8,7 @@
       </div>
     </template>
 
-    <span>{{ $t(`${status}`) || 'unknown' }}</span>
+    <span>{{ $t(`${status}`) || $t('unknown') }}</span>
   </v-tooltip>
 </template>
 

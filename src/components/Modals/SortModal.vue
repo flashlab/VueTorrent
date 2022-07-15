@@ -51,8 +51,13 @@ export default {
   data() {
     return {
       sortProperty: { value: 'added_on', name: this.$t('torrent.added') },
-      reverse: true,
-      options: [
+      reverse: true
+    }
+  },
+  computed: {
+    ...mapState(['sort_options']),
+    options() {
+      return [
         { value: 'added_on', name: this.$t('torrent.added') },
         { value: 'availability', name: this.$t('torrent.availability') },
         { value: 'category', name: this.$t('category') },
@@ -74,9 +79,6 @@ export default {
       ]
     }
   },
-  computed: {
-    ...mapState(['sort_options'])
-  },
   methods: {
     close() {
       this.dialog = false
@@ -91,7 +93,7 @@ export default {
     color: var(--search) !important;
 }
 // Reversed input variant
-::v-deep .v-input--reverse .v-input__slot {
+:deep(.v-input--reverse .v-input__slot) {
   @import "src/styles/styles.scss";
   @include reverse-switch;
 }

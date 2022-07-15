@@ -23,6 +23,10 @@ export default new Vuex.Store({
   state: {
     version: 0,
     intervals: [],
+    rss: {
+      feeds: [],
+      rules: []
+    },
     status: {
       status: '',
       downloaded: '',
@@ -56,6 +60,7 @@ export default new Vuex.Store({
       showFreeSpace: true,
       showSpeedGraph: true,
       showSessionStat: true,
+      showAlltimeStat: true,
       showCurrentSpeed: true,
       showTrackerFilter: false,
       showSpeedInTitle: false,

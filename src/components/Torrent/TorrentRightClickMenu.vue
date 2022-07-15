@@ -87,7 +87,7 @@
             class="ml-2"
             style="font-size: 1em"
           >
-            {{ $t('torrent.forcerecheck') }}
+            {{ $t('torrent.forcerecheck') | titleCase }}
           </v-list-item-title>
         </v-list-item>
         <v-list-item link @click="reannounce">
@@ -96,7 +96,7 @@
             class="ml-2"
             style="font-size: 1em"
           >
-            {{ $t('torrent.forcereanno') }}
+            {{ $t('torrent.forcereanno') | titleCase }}
           </v-list-item-title>
         </v-list-item>
         <v-list-item v-if="!multiple" link @click="toggleSeq">
@@ -105,7 +105,7 @@
             class="ml-2"
             style="font-size: 1em"
           >
-            {{ $t('torrent.sequential') }}
+            {{ $t('torrent.sequential') | titleCase }}
           </v-list-item-title>
         </v-list-item>
         <v-list-item v-if="!multiple" link @click="toggleFL">
@@ -114,7 +114,7 @@
             class="ml-2"
             style="font-size: 1em"
           >
-            {{ $t('torrent.pieceprior') }}
+            {{ $t('torrent.pieceprior') | titleCase }}
           </v-list-item-title>
         </v-list-item>
         <v-list-item v-if="!multiple" link @click="toggleAutoTMM">
@@ -123,7 +123,7 @@
             class="ml-2"
             style="font-size: 1em"
           >
-            {{ $t('torrent.autotmm') }}
+            {{ $t('torrent.autotmm') | titleCase }}
           </v-list-item-title>
         </v-list-item>
       </v-list>
@@ -386,7 +386,7 @@ export default {
       qbit.recheckTorrents(this.hashes)
     },
     showInfo() {
-      this.createModal('TorrentDetailModal', { hash: this.torrent.hash })
+      this.$router.push({ name: 'torrentDetail', params: { hash: this.torrent.hash } })
     },
     setPriority(priority) {
       qbit.setTorrentPriority(this.hashes, priority)
