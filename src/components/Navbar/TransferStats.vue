@@ -18,11 +18,11 @@
     </v-tooltip>
     <StorageCard
       class="mb-4 mt-4"
-      :label="titleCase($t('downloaded'))"
+      :label="titleCase($t('torrent.downloaded'))"
       color="download"
       :value="getDownload"
     />
-    <StorageCard :label="titleCase($t('uploaded'))" color="upload" :value="getUpload" />
+    <StorageCard :label="titleCase($t('torrent.uploaded'))" color="upload" :value="getUpload" />
   </div>
 </template>
 
@@ -36,11 +36,13 @@ export default {
   name: 'TransferStats',
   components: { StorageCard },
   props: ['status', 'session'],
-  data: () => ({
-    mdiInformationOutline,
-    sessionTitle: 'session stats',
-    alltimeTitle: 'all-time stats'
-  }),
+  data() {
+    return {
+      mdiInformationOutline,
+      sessionTitle: this.$t('navbar.sessionstats'),
+      alltimeTitle: this.$t('navbar.alltimestats')
+    }
+  },
   computed: {
     isSession() {
       return this.session

@@ -2,7 +2,7 @@
   <v-card flat>
     <v-row dense class="ma-0 pa-0">
       <v-col cols="12" md="6">
-        <v-subheader>{{ $t('modals.settings.pageRss.pageFeeds.feeds') }}</v-subheader>
+        <v-subheader>{{ $t('modals.settings.feeds') }}</v-subheader>
         <template v-for="(item, index) in availableFeeds">
           <v-list-item :key="item.uid">
             <v-list-item-content>
@@ -24,7 +24,7 @@
             class="mx-auto accent white--text elevation-0 px-4"
             @click="createFeed"
           >
-            {{ $t('modals.settings.pageRss.pageFeeds.btnCreateNew') }}
+            {{ $t('modals.settings.feedCreateNew') }}
           </v-btn>
         </v-list-item>
       </v-col>

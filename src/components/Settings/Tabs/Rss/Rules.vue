@@ -2,7 +2,7 @@
   <v-card flat>
     <v-row dense class="ma-0 pa-0">
       <v-col cols="12" md="6">
-        <v-subheader>{{ $t('modals.settings.pageRss.pageRules.rules') }}</v-subheader>
+        <v-subheader>{{ $t('modals.settings.rules') }}</v-subheader>
         <template v-for="(item, index) in availableRules">
           <v-list-item :key="item.uid">
             <v-list-item-content>
@@ -24,7 +24,7 @@
             class="mx-auto accent white--text elevation-0 px-4"
             @click="createRule"
           >
-            {{ $t('modals.settings.pageRss.pageRules.btnCreateNew') }}
+            {{ $t('modals.settings.ruleCreateNew') }}
           </v-btn>
         </v-list-item>
       </v-col>

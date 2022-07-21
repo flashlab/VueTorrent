@@ -144,7 +144,6 @@
                   <v-checkbox
                     v-model="autoTMM"
                     :label="$t('modals.settings.automanage')"
-                    :label="$t('modals.add.automaticTorrentManagement')"
                     hide-details
                   />
                 </v-flex>

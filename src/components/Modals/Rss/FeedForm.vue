@@ -11,7 +11,7 @@
           <v-container>
             <v-text-field
               v-model="feed.url"
-              :label="$t('modals.newFeed.url')"
+              :label="$t('url')"
               required
             />
           </v-container>

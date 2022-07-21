@@ -10,7 +10,7 @@
     >
       <v-col>
         <h1 style="font-size: 1.6em !important" class="subtitle-1 ml-2">
-          {{ $t('modals.detail.title') | titleCase }}
+          {{ $t('torrent.torrentdetail') | titleCase }}
         </h1>
       </v-col>
       <v-col class="align-center justify-center">
@@ -35,19 +35,19 @@
       >
         <v-tabs-slider color="white" />
         <v-tab class="white--text" href="#info">
-          <h4>{{ $t('modals.detail.tabTitleInfo') }}</h4>
+          <h4>{{ $t('torrent.info') }}</h4>
         </v-tab>
         <v-tab class="white--text" href="#trackers">
-          <h4>{{ $t('modals.detail.tabTitleTrackers') }}</h4>
+          <h4>Trackers</h4>
         </v-tab>
         <v-tab class="white--text" href="#peers">
-          <h4>{{ $t('modals.detail.tabTitlePeers') }}</h4>
+          <h4>Peers</h4>
         </v-tab>
         <v-tab class="white--text" href="#content">
-          <h4>{{ $t('modals.detail.tabTitleContent') }}</h4>
+          <h4>{{ $t('torrent.content') }}</h4>
         </v-tab>
         <v-tab class="white--text" href="#tagsAndCategories">
-          <h4>{{ $t('modals.detail.tabTitleTagsCategories') }}</h4>
+          <h4>{{ $t('modals.settings.tagcat') }}</h4>
         </v-tab>
       </v-tabs>
 

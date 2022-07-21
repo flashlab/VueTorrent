@@ -1,6 +1,6 @@
 <template>
   <v-card flat>
-    <v-subheader>Privacy</v-subheader>
+    <v-subheader>{{ $t('modals.settings.privacy') }}</v-subheader>
     <v-list-item>
       <v-checkbox
         v-model="settings.dht"

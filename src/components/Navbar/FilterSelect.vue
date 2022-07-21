@@ -11,7 +11,7 @@
       :label="$t('status')"
       flat
       solo
-      :items="selectedOptions"
+      :items="options"
       item-text="name"
       color="download"
       item-color="download"
@@ -72,18 +72,18 @@ export default {
     ...mapState(['sort_options']),
     options() {
       return [
-        { value: null, name: this.$i18n.t('all') },
-        { value: 'downloading', name: this.$i18n.t('downloading') },
-        { value: 'seeding', name: this.$i18n.t('seeding') },
-        { value: 'completed', name: this.$i18n.t('completed') },
-        { value: 'resumed', name: this.$i18n.t('resumed') },
-        { value: 'paused', name: this.$i18n.t('paused') },
-        { value: 'active', name: this.$i18n.t('active') },
-        { value: 'inactive', name: this.$i18n.t('inactive') },
-        { value: 'stalled', name: this.$i18n.t('stalled') },
-        { value: 'stalled_uploading', name: this.$i18n.t('navbar.filters.stalled_uploading') },
-        { value: 'stalled_downloading', name: this.$i18n.t('navbar.filters.stalled_downloading') },
-        { value: 'errored', name: this.$i18n.t('errored') }
+        { value: null, name: this.$t('navbar.all') },
+        { value: 'downloading', name: this.$t('navbar.downloading') },
+        { value: 'seeding', name: this.$t('navbar.seeding') },
+        { value: 'completed', name: this.$t('torrent.completed') },
+        { value: 'resumed', name: this.$t('navbar.resumed') },
+        { value: 'paused', name: this.$t('navbar.paused') },
+        { value: 'active', name: this.$t('navbar.active') },
+        { value: 'inactive', name: this.$t('navbar.inactive') },
+        { value: 'stalled', name: this.$t('navbar.stalled') },
+        { value: 'stalled_uploading', name: this.$t('navbar.stalledup') },
+        { value: 'stalled_downloading', name: this.$t('navbar.stalleddl') },
+        { value: 'errored', name: this.$t('navbar.errored') }
       ]
     },
     availableCategories() {
@@ -111,22 +111,6 @@ export default {
       }
 
       return trackers
-    },
-    selectedOptions() {
-      return [
-        { value: null, name: this.$t('navbar.all') },
-        { value: 'downloading', name: this.$t('navbar.downloading') },
-        { value: 'seeding', name: this.$t('navbar.seeding') },
-        { value: 'completed', name: this.$t('torrent.completed') },
-        { value: 'resumed', name: this.$t('navbar.resumed') },
-        { value: 'paused', name: this.$t('navbar.paused') },
-        { value: 'active', name: this.$t('navbar.active') },
-        { value: 'inactive', name: this.$t('navbar.inactive') },
-        { value: 'stalled', name: this.$t('navbar.stalled') },
-        { value: 'stalled_uploading', name: this.$t('navbar.stalledup') },
-        { value: 'stalled_downloading', name: this.$t('navbar.stalleddl') },
-        { value: 'errored', name: this.$t('navbar.errored') }
-      ]
     }
   },
   mounted() {
@@ -153,8 +137,7 @@ export default {
       this.applyFilter()
     },
     setDefaultValues() {
-      const options = this.selectedOptions
-      this.selectedState = options.find(o => o.value === this.sort_options.filter).value || options[0].value
+      this.selectedState = this.options.find(o => o.value === this.sort_options.filter).value || this.options[0].value
     }
   }
 }

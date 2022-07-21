@@ -12,7 +12,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            {{ $t('modals.detail.pageInfo.pieceStates') }}
+            {{ $t('torrent.pieceStates') }}
           </td>
           <td id="pieceStates" class="d-flex">
             <span class="mr-2 align-center d-flex"> {{ torrent.progress }}% </span>
@@ -29,7 +29,7 @@
         </tr>
         <tr style="margin-top: 10px !important">
           <td :class="commonStyle">
-            {{ $t('modals.detail.pageInfo.hash') }}
+            {{ $t('torrent.hash') }}
           </td>
           <td>
             {{ torrent.hash }}
@@ -98,7 +98,7 @@
         </tr>
         <tr>
           <td :class="commonStyle">
-            {{ $t('modals.detail.pageInfo.peers') }}
+            {{ $t('torrent.peers') }}
           </td>
           <td>
             {{ torrent.num_leechs
@@ -137,7 +137,7 @@
         </tr>
         <tr v-if="torrent.tracker">
           <td :class="commonStyle">
-            {{ $t('modals.detail.pageInfo.trackers') }}
+            {{ $t('torrent.trackers') }}
           </td>
           <td>
             {{ torrent.tracker }}

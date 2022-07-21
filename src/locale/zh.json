@@ -74,7 +74,6 @@
     "createsubfolder": "创建子文件夹",
     "drophereadd": "拖放到此处添加",
     "invalidtorrent": "一个或多个种子文件无效",
-    "onelinkperline": "每行一个链接",
     "reverse": "倒序",
     "completed": "已完成",
     "priority": "优先级",
@@ -93,7 +92,10 @@
     "undefined": "未知",
     "max": "最高",
     "high": "高",
-    "unwanted": "不下载"
+    "unwanted": "不下载",
+    "pieceStates": "进度",
+    "peers": "Peers",
+    "trackers": "Trackers"
   },
   "navbar": {
     "currentSpeed": "当前速率",
@@ -132,12 +134,14 @@
     "fail": "失败",
     "metadata": "元数据",
     "moving": "移动中",
-    "queued": "排队"
+    "queued": "排队",
+    "alltimestats": "显示历史状态"
   },
   "modals": {
     "add": {
       "title": "添加新的种子",
-      "selectFiles": "选择文件"
+      "selectFiles": "选择文件",
+      "urlHint": "每行一个链接"
     },
     "delete": {
       "check": "同时从存储中删除"
@@ -146,7 +150,6 @@
       "pluginmanager": "插件管理",
       "name": "文件名",
       "size": "大小",
-      "peers": "Peers",
       "engine": "搜索引擎",
       "action": "操作",
       "searchtermrequired": "关键词不能为空"
@@ -232,19 +235,54 @@
       "banduration": "禁止登陆时长（秒）",
       "sessiontimeout": "会话超时（秒）",
       "bypassauthentlocal": "对本地主机上的客户端跳过身份验证",
-      "bypassauthentlist": "对 IP 子网白名单中的客户端跳过身份验证"
+      "bypassauthentlist": "对 IP 子网白名单中的客户端跳过身份验证",
+      "sequentialDownload": "顺序下载",
+      "firstLastPriority": "首尾优先",
+      "proxySubHeader": "代理服务器",
+      "ipAddress": "IP 地址",
+      "proxyPeerConnections": "使用代理服务器进行用户连接",
+      "proxyTorrentOnly": "只对 torrents 使用代理",
+      "proxyAuth": "认证",
+      "feeds": "订阅源",
+      "rules": "规则",
+      "feedCreateNew": "添加订阅",
+      "rssAutoProcessing": "RSS 阅读器",
+      "enableRssProcessing": "启用获取 RSS 订阅",
+      "feedsRefreshInterval": "订阅源更新间隔",
+      "feedsMaxArticles": "每个订阅源文章数目最大值",
+      "rssAutoDownloader": "RSS Torrent 自动下载器",
+      "enableRssAutoDownload": "启用 RSS Torrents 自动下载",
+      "ruleCreateNew": "创建规则"
     },
     "share": {
       "usegloballimit": "使用全局配置",
       "unlimited": "无限制",
       "limitratio": "限制分享率"
+    },
+    "newRule": {
+      "name": "名称",
+      "mustContain": "必须包含",
+      "affectedFeeds": "应用于以下订阅源"
+    },
+    "newCategory": {
+      "categoryName": "分类名称",
+      "tipOnNoName": "分类名称是必须的",
+      "tipOnNameTooLong": "分类名称必须小于 15 个字符",
+      "tipOnNoPath": "路径是必须的",
+      "TipOnPathTooLong": "路径必须小于 40 个字符"
+    },
+    "newTag": {
+      "createNewTag": "新建标签",
+      "tagName": "标签名称"
     }
   },
   "toast": {
     "loginSuccess": "登录成功！🎉",
     "loginFailed": "登录失败…😕",
     "settingsSaved": "设置保存成功！",
-    "categorySaved": "分类编辑成功！"
+    "categorySaved": "分类编辑成功！",
+    "feedSaved": "订阅源保存成功！",
+    "ruleSaved": "规则保存成功！"
   },
   "rightClick": {
     "resume": "继续",
@@ -265,5 +303,13 @@
     "limit": "设置限制",
     "copy": "复制…",
     "info": "显示详情"
-  }
+  },
+  "edit": "编辑",
+  "createNew": "新增",
+  "feed": "订阅源",
+  "create": "新增",
+  "rule": "规则",
+  "path": "路径",
+  "unknown": "未知",
+  "status": "状态"
 }

@@ -2,13 +2,13 @@
   <v-card flat>
     <v-tabs v-model="tab">
       <v-tab href="#general">
-        {{ $t('modals.settings.pageRss.tabName.general') }}
+        {{ $t('modals.settings.general') }}
       </v-tab>
       <v-tab href="#feeds">
-        {{ $t('modals.settings.pageRss.tabName.feeds') }}
+        {{ $t('modals.settings.feeds') }}
       </v-tab>
       <v-tab href="#rules">
-        {{ $t('modals.settings.pageRss.tabName.rules') }}
+        {{ $t('modals.settings.rules') }}
       </v-tab>
     </v-tabs>
     <v-tabs-items v-model="tab" touchless>

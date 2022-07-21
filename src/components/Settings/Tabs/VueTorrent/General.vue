@@ -50,7 +50,7 @@
             class="v-input--reverse pa-0 ma-0"
             hide-details
             inset
-            :label="$t('modals.settings.allTimeStats')"
+            :label="$t('navbar.alltimestats')"
           />
         </v-col>
       </v-row>

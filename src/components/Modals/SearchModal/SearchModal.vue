@@ -109,7 +109,7 @@ export default {
           { text: this.$t('modals.search.name'), value: 'fileName' },
           { text: this.$t('modals.search.size'), value: 'fileSize' },
           { text: this.$t('seeds'), value: 'nbSeeders' },
-          { text: this.$t('modals.search.peers'), value: 'nbLeechers' },
+          { text: this.$t('torrent.peers'), value: 'nbLeechers' },
           { text: this.$t('modals.search.engine'), value: 'siteUrl' },
           { text: this.$t('modals.search.action'), value: 'actions', sortable: false }
         ]

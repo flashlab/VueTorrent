@@ -20,13 +20,13 @@
           <v-container>
             <v-text-field
               v-model="rule.def.mustContain"
-              :label="$t('modals.newRule.def.mustContain')"
+              :label="$t('modals.newRule.mustContain')"
               required
             />
           </v-container>
           <v-container>
             <v-subheader class="pa-0">
-              {{ $t("modals.newRule.def.affectedFeeds") }}
+              {{ $t("modals.newRule.affectedFeeds") }}
             </v-subheader>
             <template v-for="(item, index) in availableFeeds">
               <v-checkbox

@@ -36,25 +36,25 @@
         background-color="primary"
       >
         <v-tab class="white--text" href="#vuetorrent">
-          <h4>{{ $t("modals.settings.tabName.VueTorrent") }}</h4>
+          <h4>{{ $t("modals.settings.vuetorrent") }}</h4>
         </v-tab>
         <v-tab class="white--text" href="#downloads">
-          <h4>{{ $t("modals.settings.tabName.downloads") }}</h4>
+          <h4>{{ $t("modals.settings.downloads") }}</h4>
         </v-tab>
         <v-tab class="white--text" href="#connection">
-          <h4>{{ $t("modals.settings.tabName.connection") }}</h4>
+          <h4>{{ $t("modals.settings.connection") }}</h4>
         </v-tab>
         <v-tab class="white--text" href="#bittorrent">
-          <h4>{{ $t("modals.settings.tabName.bittorrent") }}</h4>
+          <h4>{{ $t("modals.settings.bittorrent") }}</h4>
         </v-tab>
         <v-tab class="white--text" href="#rss">
-          <h4>{{ $t("modals.settings.tabName.rss") }}</h4>
+          <h4>{{ $t("modals.settings.rss") }}</h4>
         </v-tab>
         <v-tab class="white--text" href="#webui">
-          <h4>{{ $t("modals.settings.tabName.webUI") }}</h4>
+          <h4>{{ $t("modals.settings.webui") }}</h4>
         </v-tab>
         <v-tab class="white--text" href="#tagsAndCategories">
-          <h4>{{ $t("modals.settings.tabName.tagsAndCategories") }}</h4>
+          <h4>{{ $t("modals.settings.tagcat") }}</h4>
         </v-tab>
       </v-tabs>
 

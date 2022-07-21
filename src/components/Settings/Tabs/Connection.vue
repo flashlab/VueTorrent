@@ -1,7 +1,7 @@
 <template>
   <v-card flat>
     <v-subheader>
-      {{ $t("modals.settings.pageConnection.subHeader") }}
+      {{ $t("modals.settings.connectionlimits") }}
     </v-subheader>
     <v-list-item>
       <v-text-field
@@ -11,7 +11,7 @@
         dense
         type="number"
         hide-details
-        :label="$t('modals.settings.pageConnection.globalMaxConnection')"
+        :label="$t('modals.settings.globalmaxconnection')"
       />
     </v-list-item>
     <v-list-item>
@@ -22,7 +22,7 @@
         dense
         type="number"
         hide-details
-        :label="$t('modals.settings.pageConnection.perTorrentMaxConnection')"
+        :label="$t('modals.settings.maxconnectioneach')"
       />
     </v-list-item>
     <v-list-item>
@@ -33,7 +33,7 @@
         dense
         type="number"
         hide-details
-        :label="$t('modals.settings.pageConnection.globalMaxUploadSlots')"
+        :label="$t('modals.settings.globalmaxupload')"
       />
     </v-list-item>
     <v-list-item>
@@ -44,12 +44,12 @@
         dense
         type="number"
         hide-details
-        :label="$t('modals.settings.pageConnection.perTorrentMaxUploadSlots')"
+        :label="$t('modals.settings.maxuploadeach')"
       />
     </v-list-item>
     <v-divider />
     <v-subheader>
-      {{ $t("modals.settings.pageConnection.proxySubHeader") }}
+      {{ $t("modals.settings.proxySubHeader") }}
     </v-subheader>
     <v-list-item>
       <v-row class="ml-5 mr-5 pb-4">
@@ -70,7 +70,7 @@
             outlined
             dense
             hide-details
-            :label="$t('modals.settings.pageWebUI.ipAddress')"
+            :label="$t('modals.settings.ipAddress')"
           />
         </v-col>
         <v-col cols="3" class="pa-0">
@@ -81,7 +81,7 @@
             dense
             type="number"
             hide-details
-            :label="$t('modals.settings.pageWebUI.port')"
+            :label="$t('modals.settings.port')"
           />
         </v-col>
       </v-row>
@@ -91,7 +91,7 @@
         v-model="settings.proxy_peer_connections"
         hide-details
         class="ma-0 pa-0"
-        :label="$t('modals.settings.pageConnection.proxyPeerConnections')"
+        :label="$t('modals.settings.proxyPeerConnections')"
       />
     </v-list-item>
     <v-list-item>
@@ -99,7 +99,7 @@
         v-model="settings.proxy_torrents_only"
         hide-details
         class="ma-0 pa-0"
-        :label="$t('modals.settings.pageConnection.proxyTorrentOnly')"
+        :label="$t('modals.settings.proxyTorrentOnly')"
       />
     </v-list-item>
     <v-divider />
@@ -108,7 +108,7 @@
         v-model="settings.proxy_auth_enabled"
         hide-details
         class="ma-0 pa-0"
-        :label="$t('modals.settings.pageConnection.proxyAuth')"
+        :label="$t('modals.settings.proxyAuth')"
       />
     </v-list-item>
     <v-list-item>
@@ -119,7 +119,7 @@
         dense
         hide-details
         :disabled="!settings.proxy_auth_enabled"
-        :label="$t('modals.settings.pageWebUI.username')"
+        :label="$t('username')"
       />
     </v-list-item>
     <v-list-item>
@@ -131,7 +131,7 @@
         hide-details
         type="password"
         :disabled="!settings.proxy_auth_enabled"
-        :label="$t('modals.settings.pageWebUI.password')"
+        :label="$t('password')"
       />
     </v-list-item>
   </v-card>
